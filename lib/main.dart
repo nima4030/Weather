@@ -14,7 +14,7 @@ import 'db_model.dart';
 
 
 
-void main()=>runApp(MyApp());
+//void main()=>runApp(MyApp());
 class MyApp extends StatelessWidget {
 
 
@@ -62,7 +62,6 @@ class _Page_1State extends State<Page_1> {
 
    futuremodel=fetchmodel();
    futuremodel2=fetchmodel2();
-
    icon_weather();
     super.initState();
   }
@@ -71,7 +70,7 @@ class _Page_1State extends State<Page_1> {
     return Scaffold(appBar: AppBar(title: Text("Weather"),),
       body:
           num==0 && num3==0 ?
-                        Container( child: Column(children: [
+                        Container(child: Column(children: [
                          SizedBox(width: 50,height: MediaQuery.of(context).size.height/20,),
                          Row(mainAxisAlignment: MainAxisAlignment.center,
                            children: [
@@ -158,10 +157,10 @@ class _Page_1State extends State<Page_1> {
 
                           }else if(snapshot.hasError){
                              print(snapshot.error.toString()+"///");
-                             return CircularProgressIndicator(color: Colors.blue,);
+                             return Center(child: Container(child: Text("ERROR : ${snapshot.error.toString()}"),height: 50,),);
 
                           }else{
-                            return CircularProgressIndicator(color: Colors.blue,);
+                            return Container(child: Column(crossAxisAlignment: CrossAxisAlignment.center,mainAxisAlignment: MainAxisAlignment.center,children: [Center(child: CircularProgressIndicator(color : Colors.blue))],),width: MediaQuery.of(context).size.width,);
                           }
 
 
@@ -212,7 +211,7 @@ class _Page_1State extends State<Page_1> {
                                 decoration: BoxDecoration(gradient: LinearGradient(colors:[Colors.red,Colors.blue]),
                                       borderRadius: BorderRadius.all(Radius.circular(8))),);
                               }else{
-                                return CircularProgressIndicator(color: Colors.blue,);
+                                    return SizedBox(child: CircularProgressIndicator(color: Colors.blue,),height: 50,width: 50,);
                               }
 
                   }
@@ -261,10 +260,10 @@ class _Page_1State extends State<Page_1> {
 
                                }else if(snapshot.hasError){
                                 print(snapshot.error.toString()+"///");
-                              return CircularProgressIndicator(color: Colors.blue,);
+                                return Center(child: Container(child: Text("ERROR : ${snapshot.error.toString()}"),height: 50,),);
 
                                }else{
-                              return CircularProgressIndicator(color: Colors.blue,);
+                                return SizedBox(child: CircularProgressIndicator(color: Colors.blue,),height: 50,width: 50,);
                      }
 
 
@@ -747,5 +746,7 @@ class _Page_1State extends State<Page_1> {
 
 
       }
+
+
 
 }
