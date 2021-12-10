@@ -3,7 +3,7 @@ import 'package:lottie/lottie.dart';
 import 'main.dart';
 
 void main()=>runApp(SplashApp());
-class SplashApp extends StatelessWidget {
+ class SplashApp extends StatelessWidget {
 
 
   @override
